@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'flowbite-react';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 const Details = () => {
 
     const navigate= useNavigate()
