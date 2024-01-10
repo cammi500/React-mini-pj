@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card } from 'flowbite-react';
-import {  useNavigate } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
+import { api, api_key } from '../api/api'
+
 const Details = () => {
 
-    const navigate= useNavigate()
+    const {movieId} =useParams();
+    // console.log(movieId,api_key)
+    //  after data yu
+    const movieDetails = async() => {
+        const res = await api.get(`/movie/${movieId}?api_key=${api_key}`)
+        console.log(res.data);
+    }    
+
+    useEffect(() => {
+        movieDetails()
+    },[])
+
+const navigate= useNavigate()
   return (
     <div>
         {/* //link,navigate */}
         <div className='container mx-auto '>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 grid:cols-1 gap-4">
             {/* <Link to='/'> */}
-                <span style={{'fontSize':'20px'}} onClick={()=>navigate('/')}>Back</span>
+                <span style={{'fontSize':'20px'}} onClick={()=>navigate('/')}>
+                  <i className='fa-solid fa-arrow-left'></i>  Back</span>
             {/* </Link> */}
             <div className="max-w-sm">
             <Card

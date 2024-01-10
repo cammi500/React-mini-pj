@@ -6,7 +6,7 @@ function MovieCard({movie}) {
   return (
     <div>
 
-    <Link to='/movies/details/{movie.id}'>
+    <Link to={`/movies/details/${movie.id}`}>
             
             <div className="max-w-sm">
             <Card
