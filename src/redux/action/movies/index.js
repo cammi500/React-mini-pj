@@ -13,3 +13,10 @@ export const selectMovie = (movie) =>{
         payload : movie
     }
 }
+
+export const removeSelectMovie = (movie) =>{
+    return {
+        type :ActionType.REMOVE_SELECT_MOVIE,
+        payload : movie
+    }
+} 
